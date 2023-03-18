@@ -1,4 +1,13 @@
 /* Master Styles*/
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+    background: #848484;
+}
+
+
 .sub-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -15,22 +24,29 @@ h1 {
     justify-content: space-between;
     padding: 15px;
     border-bottom: 1px solid black;
+    background-color: #989898;
 }
 
 .left {
     display: flex;
     justify-content: space-between;
+    font-size: 16px;
+    font-size: 2vw;
 }
 
 .middle {
     display: flex;
     justify-content: space-between;
+    font-size: 16px;
+    font-size: 2vw;
 }
 
 .right {
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
+    font-size: 16px;
+    font-size: 2vw;
 }
 
 .nav-bar-wrapper>.right>div {
@@ -38,7 +54,8 @@ h1 {
 }
 
 .nav-bar-link-wrapper {
-    height: 22px;
+    height: 16px;
+    height: 2.5vw; /* Works fine with 2.5vw */
     border-bottom: 1px solid transparent;
     transition: border-bottom 0.5s;
 }
