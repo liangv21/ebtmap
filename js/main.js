@@ -6,18 +6,8 @@ const MARGINS = {left: 70, right: 70, top: 70, bottom: 70};
 const VIS_HEIGHT = FRAME_HEIGHT - MARGINS.top - MARGINS.bottom;
 const VIS_WIDTH = FRAME_WIDTH - MARGINS.left - MARGINS.right;
 
-// power a home for a day
-const HOME = 7.42 
-// drive one mile 
-const CAR = .35
-// eat a hamburger 
-const BURGER = 2.84
-// amount absorbed by a tree 
-const TREE = 21
-
-
 // Frame1: airport 
-const FRAME1 = d3.select("#airportvis") 
+const FRAME1 = d3.select("#map-vis") 
 					.append("svg")
 						.attr("height", FRAME_HEIGHT)
 						.attr("width", FRAME_WIDTH)
@@ -38,7 +28,7 @@ FRAME1.selectAll("path")
 		.attr("d", path({type: "Sphere"}));
 
 // Read maps json file to add the world map svgs
-d3.json("js/maps.json")
+d3.json("data/usstatesgeojson-master/massachusetts.geojson")
 	  .then(data => {
 		const countries = topojson.feature(data, data.objects.countries);
 		FRAME1.selectAll("path").data(countries.features)
@@ -47,31 +37,3 @@ d3.json("js/maps.json")
 				.attr("class", "country")
 				.attr("d", path);
 	  });
-
-// Add points for each individual location
-d3.csv("data/finaloutput.csv").then((data) => {
-	FRAME1.selectAll("locations")
-			.data(data)
-			.enter()
-			.append("circle")
-				.attr("cx", function(d) { return projection([d["lon"],d["lat"]])[0];})
-				.attr("cy", function(d) { return projection([d["lon"],d["lat"]])[1];})
-				.attr("r", 2)
-				.attr("fill", "red")
-})
-
-// Frame2: carbon emissions
-const FRAME2 = d3.select("#carbonvis")
-		          		.append("svg")
-		            		.attr("height", FRAME_HEIGHT)
-		            		.attr("width", FRAME_WIDTH)
-		            		.attr("class", "scatter-width");
-
-// function for builidng scatter plot (Sepal_length vs. Petal_Length)
-//function createvis(){
-
-	//d3.csv("data/finaloutput.csv").then((data) => {
-	//};
-
-// call the functions
-
