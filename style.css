@@ -29,6 +29,10 @@ h1 {
     text-align: center;
 }
 
+#map-vis {
+    height: 500px;
+}
+
 /* Nav Styles*/
 .nav-bar-wrapper {
     display: flex;
