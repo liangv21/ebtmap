@@ -11,12 +11,14 @@ const FRAME1 = d3.select("#map-vis")
 					.append("svg")
 						.attr("height", FRAME_HEIGHT)
 						.attr("width", FRAME_WIDTH)
-						.attr("class", "map");
+						.attr("class", "map")
+						.style("display", "block")
+            			.style("margin", "auto");
 
 
 
 
-d3.json("data/boston-zip-codes.geojson").then(geodata => {
+d3.json("data/masszipcodes.geojson").then(geodata => {
 	// D3 Projection for USA map (albersUSA projection)
 	let projection = d3.geoMercator()
 						.fitSize([360, 200], geodata);
@@ -31,4 +33,5 @@ d3.json("data/boston-zip-codes.geojson").then(geodata => {
 			.append("path")
 				.attr("d", path)
 				.attr("transform", "scale(3)")
+				.attr("fill", "#152238");
 });
