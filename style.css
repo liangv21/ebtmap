@@ -31,14 +31,6 @@ body {
     text-align: center;
 }
 
-.about-center {
-    background: rgb(152, 152, 152);
-}
-
-.home-center {
-    background: rgb(152, 152, 152);
-}
-
 h1 {
     text-align: center;
     font: Tahoma;
@@ -46,6 +38,17 @@ h1 {
 
 #map-vis {
     height: 500px;
+}
+
+/* Home/Landing Page Styles */
+.home-center {
+    height: 76vh;
+    background: rgb(152, 152, 152);
+}
+
+/* About Us Styles*/
+.about-center {
+    background: rgb(152, 152, 152);
 }
 
 /* Nav Styles*/
