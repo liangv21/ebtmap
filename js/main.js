@@ -51,10 +51,10 @@ function plotPoints(plotData, zip) {
 			if (address2 != "") {
 				fullAddress = fullAddress + address2;
 			} 
-			let link = "<a href = \"https://www.google.com/search?q=" + name + " " + address1 + " " + address2 +
-			city + ", " + state + " " + zip_code + " \">" + popUpText + "</a>";
 			let popUpText = name + "<br>" + address1 + "<br>" + address2 +
 							city + ", " + state + " " + zip_code;
+			let link = "<a href = \"https://www.google.com/search?q=" + name + " " + address1 + " " + address2 +
+			city + ", " + state + " " + zip_code + " \">" + popUpText + "</a>";
 			marker.bindPopup(popUpText);
 		};
 	})
