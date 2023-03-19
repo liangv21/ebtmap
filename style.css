@@ -97,3 +97,9 @@ h1, h2 {
 .nav-bar-link-wrapper a:hover {
     color: black;
 }
+
+.about-paragraph {
+    text-align: left; 
+    margin-left: 60px;
+    margin-right: 60px;
+}
