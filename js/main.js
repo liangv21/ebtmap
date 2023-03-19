@@ -1,24 +1,25 @@
-var ZIP_VALUE = "02120";
+var zip = localStorage['objectToPass'];
+localStorage.removeItem('objectToPass');
+
+getData("data/zipoutput.csv", "zipcode", zip);
 
 let mapData = null
 let map = null;
 
-getData("data/zipoutput.csv", "zipcode");
-
-function getData(filename, type) {
+function getData(filename, type, zip) {
 	d3.csv(filename).then((data) => {
 		if (type == "zipcode") {
 			mapData = data;
-			createMap(mapData);
+			createMap(mapData, zip);
 		} else {
 			plotData = data;
-			plotPoints(plotData);
+			plotPoints(plotData, zip);
 	}})
 };
 
-function createMap(mapData) {
+function createMap(mapData, zip) {
 	mapData.forEach(function(point){
-		if (point["zip"] == ZIP_VALUE){
+		if (point["zip"] == zip){ 
 			// initialize leaflet map and set view to be Boston
 			map = L.map("map-vis").setView([point["lat"], point["lng"]], 12);
 
@@ -29,10 +30,10 @@ function createMap(mapData) {
 		};
 	})
 
-	getData("data/finaloutput.csv", "markers");
+	getData("data/finaloutput.csv", "markers", zip);
 };
 
-function plotPoints(plotData) {
+function plotPoints(plotData, zip) {
 	plotData.forEach(function(point) {
 
 		let long = point["Longitude"];
@@ -43,17 +44,17 @@ function plotPoints(plotData) {
 		let address2 = point["Additional Address"];
 		let city = point["City"];
 		let state = point["State"];
-		let zip = point["Zip Code"];
+		let zip_code = point["Zip Code"];
 
-		if (zip == ZIP_VALUE) {
+		if (zip_code == zip) {
 			let marker = L.marker([lat, long]).addTo(map);
 			if (address2 != "") {
 				let text = name + "\n" + address1 + "\n" + address2 +
-							city + ", " + state + " " + zip
+							city + ", " + state + " " + zip_code
 				marker.bindPopup(text);
 			} else {
 				let text = name + "\n" + address1 + "\n" +
-							city + ", " + state + " " + zip
+							city + ", " + state + " " + zip_code
 				marker.bindPopup(text);
 			};
 		};

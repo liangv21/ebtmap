@@ -23,7 +23,9 @@ window.addEventListener("load", (event) => {
         if (zip == -1) {
             alert("Your entered Zipcode \'" + textFromTextBox() + "\' was not found. Please re-enter another zipcode");
         } else {
-            // getData(checkZip()); should call upon
-        }
-    })
+            localStorage.setItem("objectToPass", zip);
+            window.location.href = "map.html";
+    }});
 })
+
+
