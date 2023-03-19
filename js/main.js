@@ -45,18 +45,17 @@ function plotPoints(plotData, zip) {
 		let city = point["City"];
 		let state = point["State"];
 		let zip_code = point["Zip Code"];
-
 		if (zip_code == zip) {
 			let marker = L.marker([lat, long]).addTo(map);
+			let fullAddress = "<br>" + address1 + "<br>"; 
 			if (address2 != "") {
-				let text = name + "\n" + address1 + "\n" + address2 +
-							city + ", " + state + " " + zip_code
-				marker.bindPopup(text);
-			} else {
-				let text = name + "\n" + address1 + "\n" +
-							city + ", " + state + " " + zip_code
-				marker.bindPopup(text);
-			};
+				fullAddress = fullAddress + address2;
+			} 
+			let link = "<a href = \"https://www.google.com/search?q=" + name + " " + address1 + " " + address2 +
+			city + ", " + state + " " + zip_code + " \">" + popUpText + "</a>";
+			let popUpText = name + "<br>" + address1 + "<br>" + address2 +
+							city + ", " + state + " " + zip_code;
+			marker.bindPopup(popUpText);
 		};
 	})
 };
