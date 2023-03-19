@@ -35,7 +35,7 @@ h1 {
     justify-content: space-between;
     padding: 15px;
     border-bottom: 1px solid black;
-    background-color: #06d6a0;
+    background-color: #6e948a;
     color: #fffcf9;
 }
 
@@ -90,4 +90,10 @@ h1 {
 
 .brand a:hover {
     color: black;
+}
+
+.sideborder{
+    color: #6e948a;
+    border-left: 20px #6e948a;
+    border-right: 20px#6e948a;
 }
