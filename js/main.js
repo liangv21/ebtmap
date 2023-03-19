@@ -1,37 +1,12 @@
-// Declare constants
-const FRAME_HEIGHT = 600;
-const FRAME_WIDTH = 1100;
-const MARGINS = {left: 70, right: 70, top: 70, bottom: 70};
+fetch('data/suffolk-ebt-acceptors.json', {method: 'GET'})
+    .then((response) => response.json())
+    .then((json) => console.log(json.features));
 
-const VIS_HEIGHT = FRAME_HEIGHT - MARGINS.top - MARGINS.bottom;
-const VIS_WIDTH = FRAME_WIDTH - MARGINS.left - MARGINS.right;
+// initialize map
+let map = L.map('map-vis').setView([42.361145, -71.057083], 13);
 
-// Create frame for map visualization
-const FRAME1 = d3.select("#map-vis") 
-					.append("svg")
-						.attr("height", FRAME_HEIGHT)
-						.attr("width", FRAME_WIDTH)
-						.attr("class", "map")
-						.style("display", "block")
-            			.style("margin", "auto");
+// connect w/ openstreetmap
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
-
-
-
-d3.json("data/masszipcodes.geojson").then(geodata => {
-	// D3 Projection for USA map (albersUSA projection)
-	let projection = d3.geoMercator()
-						.fitSize([360, 200], geodata);
-
-	// Define path for map
-	let path = d3.geoPath()
-					.projection(projection);
-
-	FRAME1.selectAll("path")
-			.data(geodata.features)
-			.enter()
-			.append("path")
-				.attr("d", path)
-				.attr("transform", "scale(3)")
-				.attr("fill", "#152238");
-});
