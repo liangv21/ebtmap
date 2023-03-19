@@ -8,7 +8,7 @@ SnapMap aims to resolve this issue by collecting all of this data and putting it
 
 Through SnapMap, we hope to assist low-income individuals with finding the best supermarkets and resources for their SNAP/EBT card, therefore resulting in significant savings, easier outreach to assistance, and general convenience.
 
-This project utilized the Leaflet and d3 libraries for map creating and csv parsing, respectively, and primarily focused on HTML, CSS, and JavaScript. Our data sources are listed below:
+This project utilized the Leaflet and d3 libraries for map creating and csv parsing, respectively, and primarily focused on HTML, CSS, JavaScript, and Python. Our data sources are listed below:
 
 - https://www.fns.usda.gov/snap/state-directory#snap-state-list-popup-content
 - https://www.fns.usda.gov/snap/retailer/historicaldata
