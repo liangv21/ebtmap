@@ -4,7 +4,7 @@ body {
 
 .map-flexbox-center {
     flex-flow: inherit;
-    height: 500px;
+    height: 675px;
     border: 1px solid black;
 }
 
@@ -14,6 +14,8 @@ body {
 
 .info-col {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     text-align: left;
     padding-left: 20px;
     padding-top: 25px;

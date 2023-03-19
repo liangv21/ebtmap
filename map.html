@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html> 
+<html>
 
 <head>
-    <meta charset=utf-8/>   
+    <meta charset=utf-8 />
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="mapStyle.css">
     <!-- Leaflet Map (js) -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-    crossorigin=""/>
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-    crossorigin=""></script>
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 
     <!-- d3 parse for csv file reading -->
     <script src='js/d3.v6.1.1/d3.min.js'></script>
@@ -46,24 +44,76 @@
             <div class="map-flexbox-center">
                 <div class="map-col" id="map-vis"></div>
                 <div class="info-col">
-                    <p style="margin-bottom: 0;">You're taking a look at...</p>
-                    <h3 id="state-name" style="margin: 0; padding-top: 0;">SEARCH FOR STATE</h3>
-                    <p>Here's some information that might help:</p>
-                    <ul>
-                        <li>
-                            <a id="snap-link" href="#">State SNAP Website </a>
-                        </li>
-                        <li>
-                            <a id="snap-schedule" href="#">Benefits Issuance Schedule </a>
-                        </li>
-                        <li>
-                            <a id="snap-offices" href="#">Local SNAP Offices</a></li>
-                        <li >
-                            <a id="ebt-link" href="#">State EBT Website</a>
-                        </li>
-                        <li id="snap-num">SNAP Phone:</li>
-                        <li id="ebt-num">EBT Phone:</li>
-                    </ul>
+                    <div class="office-info">
+                        <p style="margin-bottom: 0;">You're taking a look at...</p>
+                        <h3 id="state-name" style="margin: 0; padding-top: 0;">SEARCH FOR STATE</h3>
+                        <p>Here's some information that might help:</p>
+                        <ul>
+                            <li>
+                                <a id="snap-link" href="#">State SNAP Website </a>
+                            </li>
+                            <li>
+                                <a id="snap-schedule" href="#">Benefits Issuance Schedule </a>
+                            </li>
+                            <li>
+                                <a id="snap-offices" href="#">Local SNAP Offices</a>
+                            </li>
+                            <li>
+                                <a id="ebt-link" href="#">State EBT Website</a>
+                            </li>
+                            <li id="snap-num">SNAP Phone:</li>
+                            <li id="ebt-num">EBT Phone:</li>
+                        </ul>
+                    </div>
+                    <div class="place-type">
+                        
+                        <input type="checkbox" id="smastore" name="smastore" value="Small Grocery Store">
+                        <label for="convenience"> Small Grocery Store</label><br>
+
+                        <input type="checkbox" id="medstore" name="medstore" value="Medium Grocery Store">
+                        <label for="convenience"> Medium Grocery Store</label><br>
+
+                        <input type="checkbox" id="lgstore" name="lgstore" value="Large Grocery Store">
+                        <label for="convenience"> Large Grocery Store</label><br>
+
+                        <input type="checkbox" id="supermarket" name="supermarket" value="Supermarket">
+                        <label for="supermarket"> Supermarket</label><br>
+
+                        <input type="checkbox" id="convenience" name="convenience" value="Convenience Store">
+                        <label for="convenience"> Convenience Store</label><br>
+
+                        <input type="checkbox" id="superstore" name="superstore" value="Super Store">
+                        <label for="superstore"> Super Store</label><br>
+
+                        <input type="checkbox" id="farmers" name="farmers" value="Farmers' Market">
+                        <label for="convenience"> Farmers' Market</label><br>
+
+                        <input type="checkbox" id="meatpoultry" name="meatpoultry" value="Meat/Poultry Specialty">
+                        <label for="convenience"> Meat/Poultry Specialty</label><br>
+
+                        <input type="checkbox" id="bakery" name="bakery" value="Bakery Specialty">
+                        <label for="convenience"> Bakery Specialty</label><br>
+
+                        <input type="checkbox" id="seafood" name="seafood" value="Seafood Specialty">
+                        <label for="convenience"> Seafood Specialty</label><br>
+
+                        <input type="checkbox" id="fruitsveg" name="fruitsveg" value="Fruits/Veg Specialty">
+                        <label for="convenience"> Fruits/Veg Specialty</label><br>
+
+                        <input type="checkbox" id="delivery" name="delivery" value="Delivery Route">
+                        <label for="convenience"> Delivery Route</label><br>
+
+                        <input type="checkbox" id="coop" name="coop" value="Food Buying Co-op">
+                        <label for="convenience"> Food Buying Co-op</label><br>
+
+                        <input type="checkbox" id="military" name="military" value="Military Commissary">
+                        <label for="convenience"> Military Commissary</label><br>
+
+                        <input type="checkbox" id="combination" name="combination" value="Combination Grocery/Other">
+                        <label for="combination"> Combination Grocery/Other</label><br>
+
+                        <button type="filter">Filter</button>
+                    </div>
                 </div>
             </div>
         </div>
