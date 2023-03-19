@@ -8,6 +8,8 @@
 import pandas as pd
 import numpy as np
 
+ZIP_LIST = [str(value) for value in range(10000, 12790)]
+
 # import file
 df_zip = pd.read_csv('data/simplemaps_uszips_basicv1/uszips.csv')
 
@@ -20,6 +22,9 @@ df_zip['zip'] = df_zip['zip'].astype('string')
 # if zip code is less than 5 characters long, add zeroes to the start
 # code from https://stackoverflow.com/questions/33243763/pandas-add-leading-0-to-string-values-so-all-values-are-equal-len
 df_zip['zip'] = df_zip['zip'].apply(lambda x: str(x).zfill(5))
+
+# if zip code falls wthin NYC, replace the state appropriately
+df_zip.loc[df_zip.zip.isin(ZIP_LIST), 'state_name'] = 'New York City'
 
 # set new index
 df_zip = df_zip.set_index('zip')
