@@ -81,7 +81,7 @@ function plotPoints(plotData, zip) {
 			let popUpText = name + "<br>" + address1 + "<br>" + address2 +
 							city + ", " + state + " " + zip_code;
 			let link = "<a href = \"https://www.google.com/search?q=" + name + " " + address1 + " " + address2 +
-			city + ", " + state + " " + zip_code + " \">" + popUpText + "</a>";
+			city + ", " + state + " " + zip_code + " \" target=”_blank” >" + popUpText + "</a>";
 			marker.bindPopup(link);
 		};
 	})
