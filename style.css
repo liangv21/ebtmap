@@ -3,18 +3,21 @@
 body {
     margin: 0;
     padding: 0;
-    height: 200vh;
+    height: 100%;
     background: #fffcf9;
 }
 
 
 .container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     grid-template-columns: 1fr;
     font-family: Tahoma;
 }
 
 .sub-container {
+    flex: 1 1 auto;
     background:rgb(232, 156, 156);
 }
 
@@ -29,6 +32,7 @@ body {
     border-right: 5px #63948a;
     border-color: #63948a;
     text-align: center;
+    
 }
 
 h1 {
@@ -42,7 +46,7 @@ h1 {
 
 /* Home/Landing Page Styles */
 .home-center {
-    height: 76vh;
+    height: 51.1vh;
     background: rgb(152, 152, 152);
 }
 
