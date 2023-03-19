@@ -1,17 +1,29 @@
 // Adding event listener (Listens for enter and button click in the form w/valid zipcode in the textbox)
-const form = document.getElementById("zipcode-form");
+window.addEventListener("load", (event) => {
+    const form = document.getElementById("zipcode-form");
 
-// Returns the zipcode if there is a valid zipcode, if return 
-function checkZip() {
-    const textbox = document.getElementById("zipcode-textBox").value;
-    let zipcodeString = "" + textbox;
-    if (zipcodeString.length != 5) { return -1; } // -1 is a flag! 
-    const zipcode = parseInt(zipcodeString);
-    if (isNAN(zipcode)) { return -1; } // -1 is a flag! 
-    return zipcode;
-}
+    function textFromTextBox() {
+        const textbox = document.getElementById("zipcode-textBox").value;
+        return "" + textbox;
+    }
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    // getData(checkZip()); should call upon
+    // Returns the zipcode if there is a valid zipcode, if return 
+    function checkZip() {
+        let zipcodeString = textFromTextBox();
+        if (zipcodeString.length != 5) { return -1; } // -1 is a flag! 
+        const zipcode = parseInt(zipcodeString);
+        if (isNaN(zipcode)) { return -1; } // -1 is a flag! 
+        return zipcode;
+    }
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        
+        let zip = checkZip();
+        if (zip == -1) {
+            alert("Your entered Zipcode \'" + textFromTextBox() + "\' was not found. Please re-enter another zipcode");
+        } else {
+            // getData(checkZip()); should call upon
+        }
+    })
 })
