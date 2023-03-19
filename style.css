@@ -14,7 +14,12 @@ body {
     font-family: 'Segoe UI';
 }
 
-.center {
+.sub-container {
+    background:rgb(232, 156, 156);
+}
+
+
+[class*="center"] {
     display: flex;
     flex-direction: column;
     margin-left: auto;
@@ -24,6 +29,13 @@ body {
     border-right: 5px #63948a;
     border-color: #63948a;
     text-align: center;
+}
+
+.about-center {
+    background: rgb(152, 152, 152);
+}
+
+.home-center {
     background: rgb(152, 152, 152);
 }
 
