@@ -4,6 +4,7 @@ body {
 
 .map-flexbox-center {
     flex-flow: inherit;
+    height: 500px;
     border: 1px solid black;
 }
 
