@@ -2,6 +2,11 @@ body {
     height: 110vh;
 }
 
+.map-flexbox-center {
+    flex-flow: inherit;
+    border: 1px solid black;
+}
+
 .map-col {
     flex: 2;
 }

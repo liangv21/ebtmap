@@ -27,10 +27,12 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    height: 100%;
     border-left: 1px solid #63948a;
     border-right: 1px solid #63948a;
     text-align: center;
     box-shadow: 0px 10px 15px 2.5px #010101;
+    background: rgb(152, 152, 152);
 }
 
 h1, h2 {
@@ -40,23 +42,6 @@ h1, h2 {
 
 #map-vis {
     height: 500px;
-}
-
-/* Home/Landing Page Styles */
-.home-center {
-    height: 100%;
-    background: rgb(152, 152, 152);
-}
-
-/* About Us Styles*/
-.about-center {
-    height: 100%;
-    background: rgb(152, 152, 152);
-}
-
-/* Map Styles*/
-.map-flexbox-center {
-    background: rgb(85, 142, 234);
 }
 
 /* Nav Styles*/
