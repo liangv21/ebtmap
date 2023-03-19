@@ -11,7 +11,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    font-family: 'Segoe UI';
+    font-family: Tahoma;
 }
 
 .sub-container {
@@ -41,6 +41,7 @@ body {
 
 h1 {
     text-align: center;
+    font: Tahoma;
 }
 
 #map-vis {
@@ -100,3 +101,19 @@ h1 {
 .nav-bar-link-wrapper a:hover {
     color: black;
 }
+<<<<<<< HEAD
+
+.brand a {
+    color: #fffcf9;
+    text-decoration: none;
+    transition: color 0.5s;
+    font: Tahoma;
+}
+
+.brand a:hover {
+    color: black;
+}
+
+
+=======
+>>>>>>> 2ef9ef929db6ce43e27c8d44904fda301948feca
