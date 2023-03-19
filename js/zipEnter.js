@@ -13,7 +13,7 @@ window.addEventListener("load", (event) => {
         if (zipcodeString.length != 5) { return -1; } // -1 is a flag! 
         const zipcode = parseInt(zipcodeString);
         if (isNaN(zipcode)) { return -1; } // -1 is a flag! 
-        return zipcode;
+        return zipcodeString; 
     }
 
     form.addEventListener('submit', (event) => {

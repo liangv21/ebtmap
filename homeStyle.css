@@ -26,12 +26,12 @@ input {
 }
 
 button {
-    background: #6a7786;
+    background: #f87060;
     width: 100px;
     height: 7vh;
     border: none;
     outline: none;
-    Color: rgb(216, 214, 214);
+    Color: #ffffff;
     border-radius: 30px;
     margin-top: 15px;
     margin-left: 20px;
@@ -39,8 +39,8 @@ button {
 }
 
 button:active {
-    background: rgb(216, 214, 214);
-    Color: #6a7786;
+    background: #ffffff;
+    Color: #f87060;
 }
 
 label {
